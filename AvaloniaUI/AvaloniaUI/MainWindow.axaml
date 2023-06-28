@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StopwatchApp"
+        xmlns:viewModel="clr-namespace:StopwatchApp.ViewModels;assembly=StopwatchApp"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="200"
+        x:Class="StopwatchApp.MainWindow"
+        Title="StopwatchApp"
+        DataContext="{Binding}">
+	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+		<TextBlock x:Name="TimeTextBlock" FontSize="48" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding ElapsedTime}"/>
+		<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,20">
+			<Button x:Name="StartButton" Content="Start" Click="StartButton_Click" IsEnabled="{Binding CanStart}" Background="Green" Foreground="White" Padding="10,5"/>
+			<Button x:Name="StopButton" Content="Stop" Click="StopButton_Click" IsEnabled="{Binding CanStop}" Background="Red" Foreground="White" Padding="10,5"/>
+			<Button x:Name="ResetButton" Content="Reset" Click="ResetButton_Click" IsEnabled="{Binding CanReset}" Background="Orange" Foreground="White" Padding="10,5"/>
+		</StackPanel>
+	</StackPanel>
+</Window>
